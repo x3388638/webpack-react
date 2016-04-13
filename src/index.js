@@ -11,8 +11,11 @@ ReactDOM.render(
 	<Router history={hashHistory}>
 		<Route path="/" component={App}>
 			<IndexRoute component={Index} />
-			<Route path="user" component={User} />
-			<Route path="user/:id" component={User} />
+			<Route path="user" component={User} >
+				<Route path=":id" component={User} >
+					<Route path=":name" component={User} />
+				</Route>
+			</Route>
 		</Route>
 		<Route path="*" component={NoMatch} />
  	</Router>,

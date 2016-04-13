@@ -5,28 +5,32 @@ class User extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			id: null
+			id: null, 
+			name: null
 		}
 	}
 	componentDidMount() {
 		this.setState({
-			id: this.props.params.id || null
+			id: this.props.params.id || null, 
+			name: this.props.params.name || null
 		});
 	}
 	componentWillReceiveProps(nextProps) {
-		if(nextProps.params.id !== this.props.params.id) {
+		if(nextProps.params.id !== this.props.params.id || 
+			nextProps.params.name !== this.props.params.name) {
 			this.setState({
-				id: nextProps.params.id || null
+				id: nextProps.params.id || null, 
+				name: nextProps.params.name || null
 			});
 		}
 	}
 	render() {
+		console.log(this.props.params);
 		return (
 			<div>
-				this is User component, 
-				{
-					this.state.id ? ` user id is ${this.state.id}` : ' no user id'
-				}
+				this is User component, <br />
+				{ this.state.id ? ` user id is ${this.state.id}` : ' no user id' }, <br />
+				{ this.state.name ? ` user name is ${this.state.name}` : ' no user name'}
 			</div>
 		);
 	}
