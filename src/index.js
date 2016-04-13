@@ -21,7 +21,3 @@ ReactDOM.render(
  	</Router>,
 	document.getElementById('app')
 );
-
-const routes = {
-	path: ''
-}
