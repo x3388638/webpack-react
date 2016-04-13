@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Link} from 'react-router';
+import {Row, Col, Breadcrumb} from 'react-bootstrap';
 
 class User extends React.Component {
 	constructor(props) {
@@ -28,9 +30,33 @@ class User extends React.Component {
 		console.log(this.props.params);
 		return (
 			<div>
-				this is User component, <br />
-				{ this.state.id ? ` user id is ${this.state.id}` : ' no user id' }, <br />
-				{ this.state.name ? ` user name is ${this.state.name}` : ' no user name'}
+				<Row>
+					<Col md={12}>
+						<Breadcrumb>
+							<Breadcrumb.Item active>
+								<Link to="/">Home</Link>
+							</Breadcrumb.Item>
+							<Breadcrumb.Item active>
+								{ this.state.id ? <Link to="/user">User</Link> : "User" }
+							</Breadcrumb.Item>
+							{ this.state.id ? (
+								<Breadcrumb.Item active> 
+									{ this.state.name ? (<Link to={`/user/${this.state.id}`}>{this.state.id}</Link>) : this.state.id } 
+								</Breadcrumb.Item>) : null 
+							}
+							{ this.state.name ? (<Breadcrumb.Item active> {this.state.name} </Breadcrumb.Item>) : null }
+						</Breadcrumb>
+						<h2>This is User component</h2>
+					</Col>
+				</Row>
+				<Row>
+					<Col md={12}>
+						<ul>
+							<li>User ID: {this.state.id || "UNDEFINED"}</li>
+							<li>User name: {this.state.name || "UNDEFINED"}</li>
+						</ul>
+					</Col>
+				</Row>
 			</div>
 		);
 	}
