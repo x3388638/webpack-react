@@ -11,11 +11,7 @@ ReactDOM.render(
 	<Router history={hashHistory}>
 		<Route path="/" component={App}>
 			<IndexRoute component={Index} />
-			<Route path="user" component={User} >
-				<Route path=":id" component={User} >
-					<Route path=":name" component={User} />
-				</Route>
-			</Route>
+			<Route path="user(/:id(/:name))" component={User} />
 			<Redirect from="*" to="/" />
 		</Route>
  	</Router>,
