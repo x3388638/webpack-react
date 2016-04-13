@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, IndexRoute, hashHistory, Redirect} from 'react-router';
+import {Router, Route, IndexRoute, hashHistory, Redirect, IndexRedirect} from 'react-router';
 
 import App from './js/app';
 import Index from './js/index';
@@ -10,7 +10,9 @@ import NoMatch from './js/noMatch';
 ReactDOM.render(
 	<Router history={hashHistory}>
 		<Route path="/" component={App}>
-			<IndexRoute component={Index} />
+			{ /*<IndexRoute component={Index} />*/ }
+			<IndexRedirect to="index" />
+			<Route path="index" component={Index} />
 			<Route path="user(/:id(/:name))" component={User} />
 			<Redirect from="*" to="/" />
 		</Route>
