@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import {Router, Route, IndexRoute, hashHistory, Redirect} from 'react-router';
 
 import App from './js/app';
 import Index from './js/index';
@@ -16,8 +16,12 @@ ReactDOM.render(
 					<Route path=":name" component={User} />
 				</Route>
 			</Route>
+			<Redirect from="*" to="/" />
 		</Route>
-		<Route path="*" component={NoMatch} />
  	</Router>,
 	document.getElementById('app')
 );
+
+const routes = {
+	path: ''
+}
