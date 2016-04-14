@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Link} from 'react-router';
-import {Row, Col, Breadcrumb} from 'react-bootstrap';
+import Link from 'react-router/lib/Link';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+import Breadcrumb from 'react-bootstrap/lib/Breadcrumb';
 
 class User extends React.Component {
 	constructor(props) {

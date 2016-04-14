@@ -1,6 +1,11 @@
 import React from 'react'; 
 import ReactDOM from 'react-dom'; 
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem, Grid} from'react-bootstrap';
+import Navbar from 'react-bootstrap/lib/Navbar';
+import Nav from 'react-bootstrap/lib/Nav';
+import NavItem from 'react-bootstrap/lib/NavItem';
+import NavDropdown from 'react-bootstrap/lib/NavDropdown';
+import MenuItem from 'react-bootstrap/lib/MenuItem';
+import Grid from 'react-bootstrap/lib/Grid';
 
 class App extends React.Component{
 	constructor(props) {

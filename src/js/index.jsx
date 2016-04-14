@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Link} from 'react-router';
-import {Jumbotron, Button, Row, Col} from 'react-bootstrap';
+import Link from 'react-router/lib/Link';
+import Jumbotron from 'react-bootstrap/lib/Jumbotron';
+import Button from 'react-bootstrap/lib/Button';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
 
 class Index extends React.Component{
 	constructor(props) {
