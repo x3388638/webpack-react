@@ -11,6 +11,7 @@ import IndexRedirect from 'react-router/lib/IndexRedirect';
 import App from './js/app';
 import Index from './js/index';
 import User from './js/user';
+import Pmtl from './js/pmtl';
 import NoMatch from './js/noMatch';
 
 ReactDOM.render(
@@ -20,6 +21,7 @@ ReactDOM.render(
 			<IndexRedirect to="index" />
 			<Route path="index" component={Index} />
 			<Route path="user(/:id(/:name))" component={User} />
+			<Route path="pmtl" component={Pmtl} />
 			<Redirect from="*" to="/" />
 		</Route>
  	</Router>,
