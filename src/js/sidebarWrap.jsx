@@ -35,13 +35,13 @@ class SidebarWrap extends React.Component {
 						<li>
 							Structure
 							<pre><code>
-							## &lt;div className=".sidebarWrap" &gt;<br />
+							## &lt;div className="sidebarWrap" &gt;<br />
 							##     &lt;Sidebar&gt;<br />
 							##         &lt;Sidebar.Item&gt;<br />
 							##             sidebar item<br />
 							##         &lt;/Sidebar.Item&gt;<br />
 							##     &lt;/Sidebar&gt;<br />
-							##     &lt;div className=".outerWrap" &gt;<br />
+							##     &lt;div className="outerWrap" &gt;<br />
 							##         OuterWrap<br />
 							##     &lt;/div&gt;<br />
 							## &lt;/div&gt;
