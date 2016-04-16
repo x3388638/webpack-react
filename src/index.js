@@ -11,6 +11,7 @@ import IndexRedirect from 'react-router/lib/IndexRedirect';
 import App from './js/app';
 import Index from './js/index';
 import User from './js/user';
+import SidebarWarp from './js/sidebarWrap';
 import NoMatch from './js/noMatch';
 
 ReactDOM.render(
@@ -20,6 +21,7 @@ ReactDOM.render(
 			<IndexRedirect to="index" />
 			<Route path="index" component={Index} />
 			<Route path="user(/:id(/:name))" component={User} />
+			<Route path="sidebar" component={SidebarWarp} />
 			<Redirect from="*" to="/" />
 		</Route>
  	</Router>,

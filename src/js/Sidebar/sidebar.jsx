@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './sidebar';
+import './style';
 
 class Item extends React.Component {
 	constructor(props) {
