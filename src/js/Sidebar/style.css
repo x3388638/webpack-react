@@ -1,0 +1,53 @@
+.sidebarWrap {
+	position: relative;
+	min-height: 100%;
+}
+.sidebarWrap #sidebar {
+	background: white;
+	width: 230px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: -210px;
+	box-shadow: 0 0 0 0;
+	transition: left .5s;
+}
+.sidebarWrap #sidebar.open {
+	left: -15px;
+	box-shadow: 10px 1px 10px -5px #CCC;
+}
+.sidebarWrap #sidebar .btn-toggleSidebar {
+	color: #676767;
+	background: #f3f3f3;
+	border: 1px solid;
+	padding: 5px;
+	border-radius: 2px;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	cursor: pointer;
+	transition: all .3s;
+}
+.sidebarWrap #sidebar .btn-toggleSidebar:hover {
+	color: #f3f3f3;
+	background: #909090;
+}
+.sidebarWrap #sidebar .content {
+	height: 100%;
+	width: 195px;
+	padding: 20px 5px;
+	overflow: auto;
+}
+.sidebarWrap #sidebar .content .sidebar-item {
+	padding: 10px 5px;
+	border-bottom: 1px solid #CCC;
+}
+.sidebarWrap .outerWrap {
+	height: 100%;
+	margin-left: 20px;
+	padding: 15px;
+	transition: all .5s;
+}
+.sidebarWrap .outerWrap.open {
+	margin-left: 215px;
+}

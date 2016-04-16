@@ -12,7 +12,10 @@ import App from './js/app';
 import Index from './js/index';
 import User from './js/user';
 import Pmtl from './js/pmtl';
+import SidebarWarp from './js/sidebarWrap';
 import NoMatch from './js/noMatch';
+
+import '../static/css/style';
 
 ReactDOM.render(
 	<Router history={hashHistory}>
@@ -22,6 +25,7 @@ ReactDOM.render(
 			<Route path="index" component={Index} />
 			<Route path="user(/:id(/:name))" component={User} />
 			<Route path="pmtl" component={Pmtl} />
+			<Route path="sidebar" component={SidebarWarp} />
 			<Redirect from="*" to="/" />
 		</Route>
  	</Router>,
