@@ -7,13 +7,27 @@ import NavDropdown from 'react-bootstrap/lib/NavDropdown';
 import MenuItem from 'react-bootstrap/lib/MenuItem';
 import Grid from 'react-bootstrap/lib/Grid';
 
+import '../../static/css/app';
+
 class App extends React.Component{
 	constructor(props) {
 		super(props);
+		this.state = {
+			windowHeight: window.innerHeight
+		}
+		this.handleResize = this.handleResize.bind(this);
+	}
+	componentDidMount() {
+		window.addEventListener('resize', this.handleResize);
+	}
+	handleResize() {
+		this.setState({
+			windowHeight: window.innerHeight
+		});
 	}
 	render() {
 		return (
-			<Grid>
+			<div>
 				<Navbar>
 					<Navbar.Header>
 						<Navbar.Brand>
@@ -32,8 +46,10 @@ class App extends React.Component{
 						</NavDropdown>
 					</Nav>
 				</Navbar>
-				{this.props.children}
-			</Grid>
+				<Grid fluid style={{height: `${this.state.windowHeight - 52}px`}}>
+					{this.props.children}
+				</Grid>
+			</div>
 		);
 	}
 }

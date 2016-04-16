@@ -14,6 +14,8 @@ import User from './js/user';
 import SidebarWarp from './js/sidebarWrap';
 import NoMatch from './js/noMatch';
 
+import '../static/css/style';
+
 ReactDOM.render(
 	<Router history={hashHistory}>
 		<Route path="/" component={App}>
