@@ -12,6 +12,7 @@ import App from './js/app';
 import Index from './js/index';
 import User from './js/user';
 import SidebarWarp from './js/sidebarWrap';
+import ErrorTest from './js/errorTest';
 import NoMatch from './js/noMatch';
 
 import '../static/css/style';
@@ -24,6 +25,7 @@ ReactDOM.render(
 			<Route path="index" component={Index} />
 			<Route path="user(/:id(/:name))" component={User} />
 			<Route path="sidebar" component={SidebarWarp} />
+			<Route path="errorTest" component={ErrorTest} />
 			<Redirect from="*" to="/" />
 		</Route>
  	</Router>,
