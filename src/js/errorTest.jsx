@@ -42,8 +42,7 @@ export default class ErrorTest extends React.Component {
 	}
 	handleClick() {
 		var newA = this.state.a;
-		var index = (new Date()).getTime() % 8;
-		newA[index] += '@';
+		newA[(new Date()).getTime() % 8] += '@';
 		this.setState({
 			a: newA
 		});
@@ -60,6 +59,9 @@ export default class ErrorTest extends React.Component {
 				<SomeComponent
 					a={this.state.a}
 				/>
+				<hr />
+				<p>Open the browser dev tool and click the button, however, you will find that the state of parent is changed but <code>this.props</code> and <code>nextProps</code> in <code>shouldComponentUpdate()</code> of child are always the same.<br />
+				To resolve, <code>JSON.stringify()</code> the object in state of parent.</p>
 			</div>
 		);
 	}
