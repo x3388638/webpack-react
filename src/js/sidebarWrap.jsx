@@ -41,7 +41,7 @@ class SidebarWrap extends React.Component {
 							##             sidebar item<br />
 							##         &lt;/Sidebar.Item&gt;<br />
 							##     &lt;/Sidebar&gt;<br />
-							##     &lt;div className="outerWrap" &gt;<br />
+							##     &lt;div className={"{ `outerWrap ${this.state.sidebarOpen ? 'open' : ''}` }"} &gt;<br />
 							##         OuterWrap<br />
 							##     &lt;/div&gt;<br />
 							## &lt;/div&gt;

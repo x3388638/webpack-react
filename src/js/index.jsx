@@ -25,7 +25,8 @@ class Index extends React.Component{
 								<Link to="/user"><Button bsStyle="default">/user</Button></Link><br />
 								<Link to="/user/101213"><Button bsStyle="default">/user/101213</Button></Link><br />
 								<Link to="/user/980510/jonilars"><Button bsStyle="default">/user/980510/jonilars</Button></Link><br />
-								<Link to="/sidebar"><Button bsStyle="default">/sidebar for Sidebar example</Button></Link>
+								<Link to="/sidebar"><Button bsStyle="default">/sidebar for Sidebar example</Button></Link><br /> 
+								<Link to="/errorTest"><Button bsStyle="default">/errorTest for testing the problem about state & props</Button></Link>
 							</p>
 						</Jumbotron>
 					</Col>

@@ -13,6 +13,7 @@ import Index from './js/index';
 import User from './js/user';
 import Pmtl from './js/pmtl';
 import SidebarWarp from './js/sidebarWrap';
+import ErrorTest from './js/errorTest';
 import NoMatch from './js/noMatch';
 
 import '../static/css/style';
@@ -26,6 +27,7 @@ ReactDOM.render(
 			<Route path="user(/:id(/:name))" component={User} />
 			<Route path="pmtl" component={Pmtl} />
 			<Route path="sidebar" component={SidebarWarp} />
+			<Route path="errorTest" component={ErrorTest} />
 			<Redirect from="*" to="/" />
 		</Route>
  	</Router>,
