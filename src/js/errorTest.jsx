@@ -23,11 +23,7 @@ class SomeComponent extends React.Component {
 	}
 	render() {
 		return (
-			<div>
-				<div>{JSON.stringify(this.props.a)}</div>
-				<div>{this.props.b}</div>
-				<div>{this.props.c}</div>
-			</div>
+			<div>{JSON.stringify(this.props.a)}</div>
 		)
 	}
 }
@@ -35,33 +31,55 @@ class SomeComponent extends React.Component {
 export default class ErrorTest extends React.Component {
 	constructor(props) {
 		super(props);
-		this.handleClick = this.handleClick.bind(this);
+		this.handleClick1 = this.handleClick1.bind(this);
+		this.handleClick2 = this.handleClick2.bind(this);
 		this.state = {
-			a: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+			a: ['a']
 		}
 	}
-	handleClick() {
+
+	handleClick1() {
 		var newA = this.state.a;
-		newA[(new Date()).getTime() % 8] += '@';
+		newA.push('@');
 		this.setState({
 			a: newA
 		});
+
 		console.log('== new state setted ==');
 		console.log(JSON.stringify({
 			a: this.state.a
 		}));
 		console.log('== new state setted ==');
 	}
+
+	handleClick2() {
+		this.setState({
+			a: [...this.state.a, '@']
+		});
+
+		console.log('== new state setted ==');
+		console.log(JSON.stringify({
+			a: this.state.a
+		}));
+		console.log('== new state setted ==');
+	}
+
 	render() {
 		return (
 			<div>
-				<button onClick={this.handleClick}>random state</button>
+				<button onClick={this.handleClick1}>Button 1</button>&nbsp;
+				<button onClick={this.handleClick2}>Button 2</button>
 				<SomeComponent
 					a={this.state.a}
 				/>
 				<hr />
-				<p>Open the browser dev tool and click the button, however, you will find that the state of parent is changed but <code>this.props</code> and <code>nextProps</code> in <code>shouldComponentUpdate()</code> of child are always the same.<br />
-				To resolve, <code>JSON.stringify()</code> the object in state of parent.</p>
+				<p>Open the browser dev tool and click the Button 1, however, you will find that the state of parent is changed but <code>this.props</code> and <code>nextProps</code> in <code>shouldComponentUpdate()</code> of child are always the same.<br />
+				To resolve it, you should ensure that <code>state</code> is immutable. As a result, it will work correctly like clicking the Button 2.</p>
+				<h3>The different about clicking the two buttons</h3>
+				<h4>Button 1</h4>
+				<pre><code>{`var newA = this.state.a;\nnewA.push('@');\nthis.setState({\n    a: newA\n});`}</code></pre>
+				<h4>Button 2</h4>
+				<pre><code>{`this.setState({\n    a: [...this.state.a, '@']\n});`}</code></pre>
 			</div>
 		);
 	}
